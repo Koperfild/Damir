@@ -91,6 +91,10 @@ namespace lessonHome1
             //Console.WriteLine(Star2.Draw);
         }
     }
+    public class DeleteMe
+    {
+
+    }
     public class Car : ITurnOn
     {
         public int CurrentSpeed;
