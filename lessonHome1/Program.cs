@@ -10,40 +10,40 @@ namespace lessonHome1
     {
         static void Main(string[] args)
         {
-            double[] values = new double[15];
-            int size = 20;
-            Car[] cars = new Car[size];
-            int speed = 0;
-            for (int i = 0; i < cars.Count(); i++)
-            {
-                if (i % 2 == 0)
-                {
-                    speed = 50;
-                    for (int j = 0; j < 1111; j++)
-                    {
-                        if
-                    }
-                }
-                else
-                {
-                    speed = 0;
-                }
-                cars[i] = new Car(speed);
-            }
+            //double[] values = new double[15];
+            //int size = 20;
+            //Car[] cars = new Car[size];
+            //int speed = 0;
+            //for (int i = 0; i < cars.Count(); i++)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        speed = 50;
+            //        for (int j = 0; j < 1111; j++)
+            //        {
+            //            if
+            //        }
+            //    }
+            //    else
+            //    {
+            //        speed = 0;
+            //    }
+            //    cars[i] = new Car(speed);
+            //}
 
-            List<Car> cars2 = new List<Car>();
-            Car carElement1 = new Car(22);
-            cars2.Add(carElement1);
+            //List<Car> cars2 = new List<Car>();
+            //Car carElement1 = new Car(22);
+            //cars2.Add(carElement1);
 
-            Car c = new Car();
-            TV tv = new TV();
+            //Car c = new Car();
+            //TV tv = new TV();
 
-            List<ITurnOn> interfeisi = new List<ITurnOn>();
-            for (int i=0;i<interfeisi.Count;i++)
-            {
-                interfeisi[i].TurnOn();
-            }
-            interfeisi.Add(c);
+            //List<ITurnOn> interfeisi = new List<ITurnOn>();
+            //for (int i=0;i<interfeisi.Count;i++)
+            //{
+            //    interfeisi[i].TurnOn();
+            //}
+            //interfeisi.Add(c);
 
             //Deposit dep = new Deposit();
             //cars2.Add(dep);
@@ -89,35 +89,35 @@ namespace lessonHome1
 
             //Console.WriteLine(Star1.Draw);
             //Console.WriteLine(Star2.Draw);
-        }
-    }
-    public class DeleteMe
-    {
+    //    }
+    //}
+    //public class DeleteMe
+    //{
 
-    }
-    public class Car : ITurnOn
-    {
-        public int CurrentSpeed;
-        public int Color;
-        public Car() { }
-        public Car(int speed)
-        {
-            CurrentSpeed = speed;
-        }
-    }
+    //}
+    //public class Car : ITurnOn
+    //{
+    //    public int CurrentSpeed;
+    //    public int Color;
+    //    public Car() { }
+    //    public Car(int speed)
+    //    {
+    //        CurrentSpeed = speed;
+    //    }
+    //}
 
-    public abstract class Shape
-    {
-        public virtual double Square { get; set; }
-        public double Perimetr;
-        public double Color;
+    //public abstract class Shape
+    //{
+    //    public virtual double Square { get; set; }
+    //    public double Perimetr;
+    //    public double Color;
 
 
-        public void Draw()
-        {
-            Perimetr = Square + 4;
-        }
-    }
+    //    public void Draw()
+    //    {
+    //        Perimetr = Square + 4;
+    //    }
+    //}
     //public class Rectangle : Shape
     //{
     //    //private double Sum;
@@ -150,34 +150,55 @@ namespace lessonHome1
     //    }
     //}
 
-    public interface ITurnOn
-    {
-        void TurnOn();
-    }
-    public class TV : ITurnOn
-    {
+    //public interface ITurnOn
+    //{
+    //    void TurnOn();
+    //}
+    //public class TV : ITurnOn
+    //{
 
-    }
+    //}
 
 
-    public class Deposit
-    {
-        private double Sum;
-        public double GetSum()
-        {
-            return Sum;
-        }
-        public void SetSum(double value)
-        {
-            Sum = value;
-        }
-        public void SubtractCash(double value)
-        {
-            if (value > Sum)
+    //public class Deposit
+    //{
+    //    private double Sum;
+    //    public double GetSum()
+    //    {
+    //        return Sum;
+    //    }
+    //    public void SetSum(double value)
+    //    {
+    //        Sum = value;
+    //    }
+    //    public void SubtractCash(double value)
+    //    {
+    //        if (value > Sum)
+    //        {
+    //            double diff = value - Sum;
+    //            Sum = 0;
+    //        }
+       
+    //12.03.2017 Сделать класс. В нём static метод. Вызвать из метода main этот созданный метод
+
+            public class Matimatic 
             {
-                double diff = value - Sum;
-                Sum = 0;
+                public int compos,i;
+                public double MetCompos ();
+            }            
+    
+            Matimatic Elem = new Matimatic ();
+            static int MetCompos () 
+            {
+                for (i = 1; i < 20; i++)
+                {
+                    Matimatic.compos = compos * i;  //почему не вижу метод 
+                    //compos когда набираю Matimatic.       ?
+                }
+                   //compos *= i;
+                Console.WriteLine(compos);
+                Console.ReadKey();
+                }
             }
-        }
-    }
+     }
 }
