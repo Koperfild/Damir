@@ -10,6 +10,7 @@ namespace lessonHome1
     {
         static void Main(string[] args)
         {
+			int i;
             Matimatic.MetCompos();
 
         }
