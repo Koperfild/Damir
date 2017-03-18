@@ -9,11 +9,13 @@ namespace lessonHome1
     class Program
     {
         static void Main(string[] args)
-        {
-            Matimatic.MetCompos();
-
-        }
-    }
+        //{
+          
+    //        Matimatic.MetCompos();
+    //        
+    //    }
+    //}
+  
     //double[] values = new double[15];
     //int size = 20;
     //Car[] cars = new Car[size];
@@ -158,7 +160,7 @@ namespace lessonHome1
     //{
     //    void TurnOn();
     //}
-    //public class TV : ITurnOn
+    //public class TV : ITurnOn // наследование
     //{
 
     //}
@@ -185,30 +187,121 @@ namespace lessonHome1
 
     //12.03.2017 Сделать класс. В нём static метод. Вызвать из метода main этот созданный метод
 
-    public class Matimatic
-    {
-        public int compos, i;
+    //public class Matimatic
+    //{
+    //    public int compos, i;
 
-        //Смотри. Т.к. статический метод вызывается без создания экземпляров, то этот метод не может видеть
-        //поля и методы, относящиеся к экземпляру класса. Т.е. из метода MetCompos ты можешь обращаться лишь к статическим полям или методам
-        //Я специально дал это задание чтобы ты увидел эти ошибки.
-        //Можешь почитать на msdn (в первую очередь) и ещё где нить про static слово
-        //Вкратце. Если у класса поле static, то это как бы общее для всех экземпляров данного класса значение данного поля.
-        //Например, класс - строитель. У него поле - начальник. Подразумеваем, что у всех работников на стройке один начальник. Тогда у каждого экземпляра класса строитель будет static поле начальник
-        //И если его поменять на другого начальника, то он сменится у всех строителей. С методом примерно так же. Это действия выполняемые любым строителем независимо от свойств (значений полей) отдельного строителя.
-        //И в этом методе можно использовать поля и другие методы, относящиеся только ко всем строителям (экземплярам класса), т.е. к static полям и методам.
+        ////Смотри. Т.к. статический метод вызывается без создания экземпляров, 
+        //то этот метод не может видеть
+        ////поля и методы, относящиеся к экземпляру класса. Т.е. из метода MetCompos 
+        //ты можешь обращаться лишь к статическим полям или методам
+        ////Я специально дал это задание чтобы ты увидел эти ошибки.
+        ////Можешь почитать на msdn (в первую очередь) и ещё где нить про static слово
+        ////Вкратце. Если у класса поле static, то это как бы общее для всех экземпляров 
+        //данного класса значение данного поля.
+        ////Например, класс - строитель. У него поле - начальник. Подразумеваем, что у 
+        //всех работников на стройке один начальник. Тогда у каждого экземпляра класса 
+        //    строитель будет static поле начальник
+        ////И если его поменять на другого начальника, то он сменится у всех строителей. 
+        //С методом примерно так же. Это действия выполняемые любым строителем независимо 
+        //    от свойств (значений полей) отдельного строителя.
+        ////И в этом методе можно использовать поля и другие методы, относящиеся только ко всем 
+        // строителям (экземплярам класса), т.е. к static полям и методам.
 
-        public static void MetCompos()
-        {
-            int tmp = 1;
-            for (int i = 1; i < 20; i++)
+        //public static void MetCompos()
+        //{
+        //    int tmp = 1;
+        //    for (int i = 1; i < 20; i++)
+        //    {
+        //        tmp = tmp * i;  //почему не вижу метод 
+        //                        //compos когда набираю Matimatic.       ?
+        //    }
+        //    //compos *= i;
+        //    Console.WriteLine(tmp);
+        //    Console.ReadKey();
+
+
+            public static class Matemath
             {
-                tmp = tmp * i;  //почему не вижу метод 
-                                //compos когда набираю Matimatic.       ?
+                int count;
+                public static double Ymnog ()
+                {
+                    int tmp = 1;
+                    for (int i = 1; i < 10; i++)
+                    {
+                        tmp = tmp * i; 
+                    }
+            
+                public static void Summ ();
+                {
+                    int tmp = 1;
+                    for (int i = 1; i < 10; i++)
+                    {
+                        tmp = tmp + i; 
+                    }
+                }
+
+                public static void Factory ();
+                {
+                    int tmp = 1;
+                    for (int i = 1; i < 10; i++)
+                    {
+                        tmp = tmp * i; 
+                    }
+                 }
+             } // Console.WriteLine(Factory); //не видно Factory
+                        
+           class Matemath = new Matemath ();   
+                {    
+                Console.WriteLine(Matemath.Ymnog()); //почему не вижу методы после  Matemath. ?  
+                Console.WriteLine(Matemath.Summ());  
+                Console.WriteLine(Matemath.Factory());
+                Console.ReadKey();
+                }
+        
+                class Matemath = new Matemath2 ();   // Задание в конструкторе присвоить count
+                {  
+
+                    int count=0;
+                    public int IncreaseCount()
+                    {
+                    count=count+1;
+                    }
+                }
+                Console.WriteLine(IncreaseCount());
+
+
+
+
+
+        
+            abstract class Shape 
+            {
+                double LongSide;
+                double ShortSide;
+                public virtual double  GetArea (); //virtual для переопределения 
+                {
+                LongSide*ShortSide;
+                }
             }
-            //compos *= i;
-            Console.WriteLine(tmp);
-            Console.ReadKey();
-        }
+    
+                 public class RoundShape : Shape
+                {
+                    private double angle=0;
+                    public override double GetArea() // override для переопределения
+                    {
+                        return Square;
+                    }
+
+                    public class CornerShape : Shape
+                     {
+                        private double angle=90;
+                        public override double GetSquare()
+                        {
+                            return Square;
+                        }
+
+
+                     }
     }
 }
