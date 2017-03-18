@@ -10,43 +10,76 @@ namespace lessonHome1
     {
         static void Main(string[] args)
         {
-            Triangle t1 = new Triangle(20,30);
-            Triangle t2 = new Triangle(10,12);
-
-            Circle circle = new Circle();
-
-
-            List<Triangle> list1 = new List<Triangle>();
-            List<Circle> list2 = new List<Circle>();
-            List<Shape> listOfShapes = new List<Shape>();
-
-            Shape shape1 = (Shape)t1;
-
-            listOfShapes.Add(t1);
-            listOfShapes.Add(circle);
-
-            Circle circle1 = new Circle();
-            Shape s = (Shape)circle1;//приравниваем значения ссылок. Т.е. 2 одинаковых числа - адреса, указывающих на
-            //один участок в оперативной памяти. При этом нельзя создавать экземпляр Shape, т.к. он abstract
-            Shape s1 = circle1;
-
-            for (int i = 0; i < listOfShapes.Count; i++)
+            public class Number
             {
-                Console.WriteLine(listOfShapes[i].GetArea());
+                int num;
+                int list <OddNumbers>;
+                int list <EventNumbers>;
+                int void AddNumber ()
+                {
+                        for (int i = 0; i < 20; i++)
+                        {
+                            if (i%2==0)
+                            {
+                            OddNumbers.Add(i);
+                            }
+                            else 
+                            {   
+                             EventNumbers.Add(i);
+                            }
+
+                        }
+                }
+            }
+            List<OddNumbers> list1 = new List<OddNumber>();
+            for (num = 0; i < OddNumber.Count; i++)
+            {
+                Console.WriteLine(OddNumber[i]);
             }
             Console.ReadKey();
+       }
+}
+            
+    
+    
+    
+    //Triangle t1 = new Triangle(20,30);
+            //Triangle t2 = new Triangle(10,12);
+
+            //Circle circle = new Circle();
+    //        List<Triangle> list1 = new List<Triangle>();
+    //        List<Circle> list2 = new List<Circle>();
+    //        List<Shape> listOfShapes = new List<Shape>();
+
+    //        Shape shape1 = (Shape)t1;
+
+    //        listOfShapes.Add(t1);
+    //        listOfShapes.Add(circle);
+
+    //        Circle circle1 = new Circle();
+    //        Shape s = (Shape)circle1;//приравниваем значения ссылок. Т.е. 2 одинаковых числа - адреса, указывающих на
+    //        //один участок в оперативной памяти. При этом нельзя создавать экземпляр Shape, т.к. он abstract
+    //        Shape s1 = circle1;
+
+    //        for (int i = 0; i < listOfShapes.Count; i++)
+    //        {
+    //            Console.WriteLine(listOfShapes[i].GetArea());
+    //        }
+    //        Console.ReadKey();
 
 
-            list1.Add(t1);
-            list1.Add(t2);
-            for (int i=0;i<list1.Count;i++)
-            {
-                //Console.WriteLine(list1[i].GetArea());
-                Console.WriteLine(list1[i].GetArea());
-            }
-            Console.ReadKey();
-        }
-    }
+    //        list1.Add(t1);
+    //        list1.Add(t2);
+    //        for (int i=0;i<list1.Count;i++)
+    //        {
+    //            //Console.WriteLine(list1[i].GetArea());
+    //            Console.WriteLine(list1[i].GetArea());
+    //        }
+    //        Console.ReadKey();
+
+            
+    //    }
+    //}
     //{
 
     //        Matimatic.MetCompos();
@@ -259,95 +292,95 @@ namespace lessonHome1
     //    Console.ReadKey();
 
 
-    public static class Matemath
-    {
-        static int count;
-        public static double Ymnog()
-        {
-            int tmp = 1;
-            for (int i = 1; i < 10; i++)
-            {
-                tmp = tmp * i;
-            }
-            return tmp;
-        }
+//    public static class Matemath
+//    {
+//        static int count;
+//        public static double Ymnog()
+//        {
+//            int tmp = 1;
+//            for (int i = 1; i < 10; i++)
+//            {
+//                tmp = tmp * i;
+//            }
+//            return tmp;
+//        }
 
-        public static double Summ()
-        {
-            int tmp = 1;
-            for (int i = 1; i < 10; i++)
-            {
-                tmp = tmp + i;
-            }
-            return tmp;
-        }
-
-
-
-        public static double Factory()
-        {
-            int tmp = 1;
-            for (int i = 1; i < 10; i++)
-            {
-                tmp = tmp * i;
-            }
-            return tmp;
-        }
-        // Console.WriteLine(Factory); //не видно Factory
-
-        //class Matemath = new Matemath();   
-        //     {    
-        //     Console.WriteLine(Matemath.Ymnog()); //почему не вижу методы после  Matemath. ?  
-        //     Console.WriteLine(Matemath.Summ());  
-        //     Console.WriteLine(Matemath.Factory());
-        //     Console.ReadKey();
-        //     }
-
-        //     class Matemath = new Matemath2();   // Задание в конструкторе присвоить count
-        //     {  
+//        public static double Summ()
+//        {
+//            int tmp = 1;
+//            for (int i = 1; i < 10; i++)
+//            {
+//                tmp = tmp + i;
+//            }
+//            return tmp;
+//        }
 
 
-        public static void IncreaseCount()
-        {
-            int count = 0;
-            count = count + 1;
-        }
-    }
 
-    public abstract class Shape
-    {
-        protected double Square;
-        public abstract double GetArea(); //virtual для переопределения 
-    }
+//        public static double Factory()
+//        {
+//            int tmp = 1;
+//            for (int i = 1; i < 10; i++)
+//            {
+//                tmp = tmp * i;
+//            }
+//            return tmp;
+//        }
+//        // Console.WriteLine(Factory); //не видно Factory
 
-    public class Circle : Shape
-    {
-        private double radius = 3;
-        public override double GetArea() // override для переопределения
-        {
-            Square = Math.PI * radius * radius;
-            return Square;
-        }
-    }
+//        //class Matemath = new Matemath();   
+//        //     {    
+//        //     Console.WriteLine(Matemath.Ymnog()); //почему не вижу методы после  Matemath. ?  
+//        //     Console.WriteLine(Matemath.Summ());  
+//        //     Console.WriteLine(Matemath.Factory());
+//        //     Console.ReadKey();
+//        //     }
 
-    public class Triangle : Shape
-    {
-        private double angle = 90;
-        private double A;
-        private double B;
-        public Triangle(double a,double b)
-        {
-            A = a;
-            B = b;
-        }
-        public override double GetArea()
-        {
-            Square = A * B / 2;
-            return Square;
-        }
+//        //     class Matemath = new Matemath2();   // Задание в конструкторе присвоить count
+//        //     {  
 
 
-    }
-}
+//        public static void IncreaseCount()
+//        {
+//            int count = 0;
+//            count = count + 1;
+//        }
+//    }
+
+//    public abstract class Shape
+//    {
+//        protected double Square;
+//        public abstract double GetArea(); //virtual для переопределения 
+//    }
+
+//    public class Circle : Shape
+//    {
+//        private double radius = 3;
+//        public override double GetArea() // override для переопределения
+//        {
+//            Square = Math.PI * radius * radius;
+//            return Square;
+//        }
+//    }
+
+//    public class Triangle : Shape
+//    {
+//        private double angle = 90;
+//        private double A;
+//        private double B;
+//        public Triangle(double a,double b)
+//        {
+//            A = a;
+//            B = b;
+//        }
+//        public override double GetArea()
+//        {
+//            Square = A * B / 2;
+//            return Square;
+//        }
+
+
+//    }
+//}
 
 
