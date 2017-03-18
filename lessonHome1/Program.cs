@@ -9,13 +9,51 @@ namespace lessonHome1
     class Program
     {
         static void Main(string[] args)
-        //{
-          
+        {
+            Triangle t1 = new Triangle(20,30);
+            Triangle t2 = new Triangle(10,12);
+
+            Circle circle = new Circle();
+
+
+            List<Triangle> list1 = new List<Triangle>();
+            List<Circle> list2 = new List<Circle>();
+            List<Shape> listOfShapes = new List<Shape>();
+
+            Shape shape1 = (Shape)t1;
+
+            listOfShapes.Add(t1);
+            listOfShapes.Add(circle);
+
+            Circle circle1 = new Circle();
+            Shape s = (Shape)circle1;//приравниваем значения ссылок. Т.е. 2 одинаковых числа - адреса, указывающих на
+            //один участок в оперативной памяти. При этом нельзя создавать экземпляр Shape, т.к. он abstract
+            Shape s1 = circle1;
+
+            for (int i = 0; i < listOfShapes.Count; i++)
+            {
+                Console.WriteLine(listOfShapes[i].GetArea());
+            }
+            Console.ReadKey();
+
+
+            list1.Add(t1);
+            list1.Add(t2);
+            for (int i=0;i<list1.Count;i++)
+            {
+                //Console.WriteLine(list1[i].GetArea());
+                Console.WriteLine(list1[i].GetArea());
+            }
+            Console.ReadKey();
+        }
+    }
+    //{
+
     //        Matimatic.MetCompos();
     //        
     //    }
     //}
-  
+
     //double[] values = new double[15];
     //int size = 20;
     //Car[] cars = new Car[size];
@@ -191,117 +229,125 @@ namespace lessonHome1
     //{
     //    public int compos, i;
 
-        ////Смотри. Т.к. статический метод вызывается без создания экземпляров, 
-        //то этот метод не может видеть
-        ////поля и методы, относящиеся к экземпляру класса. Т.е. из метода MetCompos 
-        //ты можешь обращаться лишь к статическим полям или методам
-        ////Я специально дал это задание чтобы ты увидел эти ошибки.
-        ////Можешь почитать на msdn (в первую очередь) и ещё где нить про static слово
-        ////Вкратце. Если у класса поле static, то это как бы общее для всех экземпляров 
-        //данного класса значение данного поля.
-        ////Например, класс - строитель. У него поле - начальник. Подразумеваем, что у 
-        //всех работников на стройке один начальник. Тогда у каждого экземпляра класса 
-        //    строитель будет static поле начальник
-        ////И если его поменять на другого начальника, то он сменится у всех строителей. 
-        //С методом примерно так же. Это действия выполняемые любым строителем независимо 
-        //    от свойств (значений полей) отдельного строителя.
-        ////И в этом методе можно использовать поля и другие методы, относящиеся только ко всем 
-        // строителям (экземплярам класса), т.е. к static полям и методам.
+    ////Смотри. Т.к. статический метод вызывается без создания экземпляров, 
+    //то этот метод не может видеть
+    ////поля и методы, относящиеся к экземпляру класса. Т.е. из метода MetCompos 
+    //ты можешь обращаться лишь к статическим полям или методам
+    ////Я специально дал это задание чтобы ты увидел эти ошибки.
+    ////Можешь почитать на msdn (в первую очередь) и ещё где нить про static слово
+    ////Вкратце. Если у класса поле static, то это как бы общее для всех экземпляров 
+    //данного класса значение данного поля.
+    ////Например, класс - строитель. У него поле - начальник. Подразумеваем, что у 
+    //всех работников на стройке один начальник. Тогда у каждого экземпляра класса 
+    //    строитель будет static поле начальник
+    ////И если его поменять на другого начальника, то он сменится у всех строителей. 
+    //С методом примерно так же. Это действия выполняемые любым строителем независимо 
+    //    от свойств (значений полей) отдельного строителя.
+    ////И в этом методе можно использовать поля и другие методы, относящиеся только ко всем 
+    // строителям (экземплярам класса), т.е. к static полям и методам.
 
-        //public static void MetCompos()
-        //{
-        //    int tmp = 1;
-        //    for (int i = 1; i < 20; i++)
-        //    {
-        //        tmp = tmp * i;  //почему не вижу метод 
-        //                        //compos когда набираю Matimatic.       ?
-        //    }
-        //    //compos *= i;
-        //    Console.WriteLine(tmp);
-        //    Console.ReadKey();
+    //public static void MetCompos()
+    //{
+    //    int tmp = 1;
+    //    for (int i = 1; i < 20; i++)
+    //    {
+    //        tmp = tmp * i;  //почему не вижу метод 
+    //                        //compos когда набираю Matimatic.       ?
+    //    }
+    //    //compos *= i;
+    //    Console.WriteLine(tmp);
+    //    Console.ReadKey();
 
 
-            public static class Matemath
+    public static class Matemath
+    {
+        static int count;
+        public static double Ymnog()
+        {
+            int tmp = 1;
+            for (int i = 1; i < 10; i++)
             {
-                int count;
-                public static double Ymnog ()
-                {
-                    int tmp = 1;
-                    for (int i = 1; i < 10; i++)
-                    {
-                        tmp = tmp * i; 
-                    }
-            
-                public static void Summ ();
-                {
-                    int tmp = 1;
-                    for (int i = 1; i < 10; i++)
-                    {
-                        tmp = tmp + i; 
-                    }
-                }
-
-                public static void Factory ();
-                {
-                    int tmp = 1;
-                    for (int i = 1; i < 10; i++)
-                    {
-                        tmp = tmp * i; 
-                    }
-                 }
-             } // Console.WriteLine(Factory); //не видно Factory
-                        
-           class Matemath = new Matemath ();   
-                {    
-                Console.WriteLine(Matemath.Ymnog()); //почему не вижу методы после  Matemath. ?  
-                Console.WriteLine(Matemath.Summ());  
-                Console.WriteLine(Matemath.Factory());
-                Console.ReadKey();
-                }
-        
-                class Matemath = new Matemath2 ();   // Задание в конструкторе присвоить count
-                {  
-
-                    int count=0;
-                    public int IncreaseCount()
-                    {
-                    count=count+1;
-                    }
-                }
-                Console.WriteLine(IncreaseCount());
-
-
-
-
-
-        
-            abstract class Shape 
-            {
-                double LongSide;
-                double ShortSide;
-                public virtual double  GetArea (); //virtual для переопределения 
-                {
-                LongSide*ShortSide;
-                }
+                tmp = tmp * i;
             }
-    
-                 public class RoundShape : Shape
-                {
-                    private double angle=0;
-                    public override double GetArea() // override для переопределения
-                    {
-                        return Square;
-                    }
+            return tmp;
+        }
 
-                    public class CornerShape : Shape
-                     {
-                        private double angle=90;
-                        public override double GetSquare()
-                        {
-                            return Square;
-                        }
+        public static double Summ()
+        {
+            int tmp = 1;
+            for (int i = 1; i < 10; i++)
+            {
+                tmp = tmp + i;
+            }
+            return tmp;
+        }
 
 
-                     }
+
+        public static double Factory()
+        {
+            int tmp = 1;
+            for (int i = 1; i < 10; i++)
+            {
+                tmp = tmp * i;
+            }
+            return tmp;
+        }
+        // Console.WriteLine(Factory); //не видно Factory
+
+        //class Matemath = new Matemath();   
+        //     {    
+        //     Console.WriteLine(Matemath.Ymnog()); //почему не вижу методы после  Matemath. ?  
+        //     Console.WriteLine(Matemath.Summ());  
+        //     Console.WriteLine(Matemath.Factory());
+        //     Console.ReadKey();
+        //     }
+
+        //     class Matemath = new Matemath2();   // Задание в конструкторе присвоить count
+        //     {  
+
+
+        public static void IncreaseCount()
+        {
+            int count = 0;
+            count = count + 1;
+        }
+    }
+
+    public abstract class Shape
+    {
+        protected double Square;
+        public abstract double GetArea(); //virtual для переопределения 
+    }
+
+    public class Circle : Shape
+    {
+        private double radius = 3;
+        public override double GetArea() // override для переопределения
+        {
+            Square = Math.PI * radius * radius;
+            return Square;
+        }
+    }
+
+    public class Triangle : Shape
+    {
+        private double angle = 90;
+        private double A;
+        private double B;
+        public Triangle(double a,double b)
+        {
+            A = a;
+            B = b;
+        }
+        public override double GetArea()
+        {
+            Square = A * B / 2;
+            return Square;
+        }
+
+
     }
 }
+
+
