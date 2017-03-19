@@ -10,12 +10,17 @@ namespace lessonHome1
     {
         static void Main(string[] args)
         {
+            //Ты сделал класс внутри метода класса Program. Сделай класс вне класса Program.
             public class Number
             {
+                //делай пока классы, поля класса, методы со словом public в начале
                 int num;
+                //Список int'ов объявляется так: List<int> list = new List<int>();
                 int list <OddNumbers>;
                 int list <EventNumbers>;
-                int void AddNumber ()
+            //В метод должен передаваться параметр int i.
+            //Т.е. метод будет выглядеть так: public void Addnumber(int i) 
+            int void AddNumber ()
                 {
                         for (int i = 0; i < 20; i++)
                         {
@@ -31,7 +36,9 @@ namespace lessonHome1
                         }
                 }
             }
+            //Этот код уже идёт вне класса.
             List<OddNumbers> list1 = new List<OddNumber>();
+            //У тебя команды вне метода написаны
             for (num = 0; i < OddNumber.Count; i++)
             {
                 Console.WriteLine(OddNumber[i]);
