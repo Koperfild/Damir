@@ -10,49 +10,56 @@ namespace lessonHome1
     {
         static void Main(string[] args)
         {   // почему тут требует закрыть блок? я же внизу закрыл.
-                                //Ты сделал класс внутри метода класса Program. Сделай класс вне класса Program.
+            //Ты сделал класс внутри метода класса Program. Сделай класс вне класса Program.
             // не понял, почему нельзя внутри Program. мы ведь раньше всегда здесь все писали.
-            public class Number
-            {
-                //делай пока классы, поля класса, методы со словом public в начале
-                //int num;
-                //Список int'ов объявляется так: List<int> list = new List<int>();
-                // int list <OddNumbers>;
-                // int list <EventNumbers>;
-                //В метод должен передаваться параметр int i.
-                //Т.е. метод будет выглядеть так: public void Addnumber(int i) 
-                
-                List<int> OddNumbers = new List<int>();
-                List<int> EventNumbers = new List<int>();
-                int void AddNumber ()
-                {
-                        for (int i = 0; i < 20; i++)
-                        {
-                            if (i%2==0)
-                            {
-                            OddNumbers.Add(i);
-                            }
-                            else 
-                            {   
-                             EventNumbers.Add(i);
-                            }
 
-                        }
-                }
-            }
             //Этот код уже идёт вне класса.
             //List<OddNumbers> list1 = new List<OddNumber>();
             //У тебя команды вне метода написаны
             Number Get1 = new Number();
+            
+            //Вызывай теперь твой метод так
+            Get1.AddNumber
+
+            //хз чё ты хотел этим сказать) Чувствуется С++ восприятие мира
             int GetOddNum ()
             {
                 for (num = 0; i < OddNumber.Count; i++)
                 {
                     Console.WriteLine(OddNumber[i]);
                 }
-            Console.ReadKey();
+                Console.ReadKey();
             }
-       }
+        }
+    }
+    public class Number
+    {
+        //делай пока классы, поля класса, методы со словом public в начале
+        //int num;
+        //Список int'ов объявляется так: List<int> list = new List<int>();
+        // int list <OddNumbers>;
+        // int list <EventNumbers>;
+        //В метод должен передаваться параметр int i.
+        //Т.е. метод будет выглядеть так: public void Addnumber(int i) 
+
+        List<int> OddNumbers = new List<int>();
+        List<int> EventNumbers = new List<int>();
+        public void AddNumber()
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    OddNumbers.Add(i);
+                }
+                else
+                {
+                    EventNumbers.Add(i);
+                }
+
+            }
+        }
+    }
 }
             
     
