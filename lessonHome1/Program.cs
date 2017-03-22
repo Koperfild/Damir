@@ -9,18 +9,22 @@ namespace lessonHome1
     class Program
     {
         static void Main(string[] args)
-        {
-            //Ты сделал класс внутри метода класса Program. Сделай класс вне класса Program.
+        {   // почему тут требует закрыть блок? я же внизу закрыл.
+                                //Ты сделал класс внутри метода класса Program. Сделай класс вне класса Program.
+            // не понял, почему нельзя внутри Program. мы ведь раньше всегда здесь все писали.
             public class Number
             {
                 //делай пока классы, поля класса, методы со словом public в начале
-                int num;
+                //int num;
                 //Список int'ов объявляется так: List<int> list = new List<int>();
-                int list <OddNumbers>;
-                int list <EventNumbers>;
-            //В метод должен передаваться параметр int i.
-            //Т.е. метод будет выглядеть так: public void Addnumber(int i) 
-            int void AddNumber ()
+                // int list <OddNumbers>;
+                // int list <EventNumbers>;
+                //В метод должен передаваться параметр int i.
+                //Т.е. метод будет выглядеть так: public void Addnumber(int i) 
+                
+                List<int> OddNumbers = new List<int>();
+                List<int> EventNumbers = new List<int>();
+                int void AddNumber ()
                 {
                         for (int i = 0; i < 20; i++)
                         {
@@ -37,13 +41,17 @@ namespace lessonHome1
                 }
             }
             //Этот код уже идёт вне класса.
-            List<OddNumbers> list1 = new List<OddNumber>();
+            //List<OddNumbers> list1 = new List<OddNumber>();
             //У тебя команды вне метода написаны
-            for (num = 0; i < OddNumber.Count; i++)
+            Number Get1 = new Number();
+            int GetOddNum ()
             {
-                Console.WriteLine(OddNumber[i]);
-            }
+                for (num = 0; i < OddNumber.Count; i++)
+                {
+                    Console.WriteLine(OddNumber[i]);
+                }
             Console.ReadKey();
+            }
        }
 }
             
