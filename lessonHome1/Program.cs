@@ -9,30 +9,45 @@ namespace lessonHome1
     class Program
     {
         static void Main(string[] args)
-        {   // почему тут требует закрыть блок? я же внизу закрыл.
-            //Ты сделал класс внутри метода класса Program. Сделай класс вне класса Program.
-            // не понял, почему нельзя внутри Program. мы ведь раньше всегда здесь все писали.
+        {
+            //Console.WriteLine("Напишите кол-во чисел");
+            //int a = int.Parse(Console.ReadLine());
+            //Number Get1 = new Number(a);
 
-            //Этот код уже идёт вне класса.
-            //List<OddNumbers> list1 = new List<OddNumber>();
-            //У тебя команды вне метода написаны
-            Number Get1 = new Number();
-            
-            //Вызывай теперь твой метод так
-            Get1.AddNumber
+            //Console.WriteLine("Чётные числа");
+            //ShowList(Get1.EvenNumbers);
 
-            //хз чё ты хотел этим сказать) Чувствуется С++ восприятие мира
-            int GetOddNum ()
+            //Console.WriteLine("Нечётные числа");
+            //ShowList(Get1.OddNumbers);
+            Object o = new object();
+            Console.WriteLine(o.ToString());
+
+            Circle c = new Circle();
+            Console.WriteLine(c.ToString());
+            Triangle t = new Triangle(2,3);
+            Console.WriteLine(t.ToString());
+
+            Console.WriteLine("\n\nА теперь из списка\n");
+            List<object> list = new List<object>();
+            list.Add(o);
+            list.Add(c);
+            list.Add(t);
+            for (int i = 0; i < list.Count; i++)
+                Console.WriteLine(list[i].ToString());
+
+        }
+
+        public static void ShowList(List<int> list)
+        {
+            for (int i = 0; i < list.Count; i++)
             {
-                for (num = 0; i < OddNumber.Count; i++)
-                {
-                    Console.WriteLine(OddNumber[i]);
-                }
-                Console.ReadKey();
+                Console.WriteLine(list[i]);
             }
+            Console.ReadKey();
         }
     }
-    public class Number
+
+    public class Number : Energy
     {
         //делай пока классы, поля класса, методы со словом public в начале
         //int num;
@@ -42,11 +57,16 @@ namespace lessonHome1
         //В метод должен передаваться параметр int i.
         //Т.е. метод будет выглядеть так: public void Addnumber(int i) 
 
-        List<int> OddNumbers = new List<int>();
-        List<int> EventNumbers = new List<int>();
-        public void AddNumber()
+        public List<int> OddNumbers = new List<int>();
+        public List<int> EvenNumbers = new List<int>();
+        //Конструктор
+        public Number(int b)
         {
-            for (int i = 0; i < 20; i++)
+            FillList(b);
+        }
+        void FillList(int c)
+        {
+            for (int i = 1; i <= c; i++)
             {
                 if (i % 2 == 0)
                 {
@@ -54,21 +74,43 @@ namespace lessonHome1
                 }
                 else
                 {
-                    EventNumbers.Add(i);
+                    EvenNumbers.Add(i);
                 }
 
             }
         }
-    }
-}
-            
-    
-    
-    
-    //Triangle t1 = new Triangle(20,30);
-            //Triangle t2 = new Triangle(10,12);
 
-            //Circle circle = new Circle();
+        public void SetPowerCharge()
+        {
+
+        }
+    }
+
+
+    public interface Energy
+    {
+        void SetPowerCharge();
+
+    }
+    public interface IMyInterface
+    {
+        int Count { get; set; }
+        void Add(object a);
+    }
+
+    public class MyList : Object
+    {
+
+    }
+
+
+
+
+
+    //Triangle t1 = new Triangle(20,30);
+    //Triangle t2 = new Triangle(10,12);
+
+    //Circle circle = new Circle();
     //        List<Triangle> list1 = new List<Triangle>();
     //        List<Circle> list2 = new List<Circle>();
     //        List<Shape> listOfShapes = new List<Shape>();
@@ -99,7 +141,7 @@ namespace lessonHome1
     //        }
     //        Console.ReadKey();
 
-            
+
     //    }
     //}
     //{
@@ -314,95 +356,113 @@ namespace lessonHome1
     //    Console.ReadKey();
 
 
-//    public static class Matemath
-//    {
-//        static int count;
-//        public static double Ymnog()
-//        {
-//            int tmp = 1;
-//            for (int i = 1; i < 10; i++)
-//            {
-//                tmp = tmp * i;
-//            }
-//            return tmp;
-//        }
+    //    public static class Matemath
+    //    {
+    //        static int count;
+    //        public static double Ymnog()
+    //        {
+    //            int tmp = 1;
+    //            for (int i = 1; i < 10; i++)
+    //            {
+    //                tmp = tmp * i;
+    //            }
+    //            return tmp;
+    //        }
 
-//        public static double Summ()
-//        {
-//            int tmp = 1;
-//            for (int i = 1; i < 10; i++)
-//            {
-//                tmp = tmp + i;
-//            }
-//            return tmp;
-//        }
-
-
-
-//        public static double Factory()
-//        {
-//            int tmp = 1;
-//            for (int i = 1; i < 10; i++)
-//            {
-//                tmp = tmp * i;
-//            }
-//            return tmp;
-//        }
-//        // Console.WriteLine(Factory); //не видно Factory
-
-//        //class Matemath = new Matemath();   
-//        //     {    
-//        //     Console.WriteLine(Matemath.Ymnog()); //почему не вижу методы после  Matemath. ?  
-//        //     Console.WriteLine(Matemath.Summ());  
-//        //     Console.WriteLine(Matemath.Factory());
-//        //     Console.ReadKey();
-//        //     }
-
-//        //     class Matemath = new Matemath2();   // Задание в конструкторе присвоить count
-//        //     {  
+    //        public static double Summ()
+    //        {
+    //            int tmp = 1;
+    //            for (int i = 1; i < 10; i++)
+    //            {
+    //                tmp = tmp + i;
+    //            }
+    //            return tmp;
+    //        }
 
 
-//        public static void IncreaseCount()
-//        {
-//            int count = 0;
-//            count = count + 1;
-//        }
-//    }
 
-//    public abstract class Shape
-//    {
-//        protected double Square;
-//        public abstract double GetArea(); //virtual для переопределения 
-//    }
+    //        public static double Factory()
+    //        {
+    //            int tmp = 1;
+    //            for (int i = 1; i < 10; i++)
+    //            {
+    //                tmp = tmp * i;
+    //            }
+    //            return tmp;
+    //        }
+    //        // Console.WriteLine(Factory); //не видно Factory
 
-//    public class Circle : Shape
-//    {
-//        private double radius = 3;
-//        public override double GetArea() // override для переопределения
-//        {
-//            Square = Math.PI * radius * radius;
-//            return Square;
-//        }
-//    }
+    //        //class Matemath = new Matemath();   
+    //        //     {    
+    //        //     Console.WriteLine(Matemath.Ymnog()); //почему не вижу методы после  Matemath. ?  
+    //        //     Console.WriteLine(Matemath.Summ());  
+    //        //     Console.WriteLine(Matemath.Factory());
+    //        //     Console.ReadKey();
+    //        //     }
 
-//    public class Triangle : Shape
-//    {
-//        private double angle = 90;
-//        private double A;
-//        private double B;
-//        public Triangle(double a,double b)
-//        {
-//            A = a;
-//            B = b;
-//        }
-//        public override double GetArea()
-//        {
-//            Square = A * B / 2;
-//            return Square;
-//        }
+    //        //     class Matemath = new Matemath2();   // Задание в конструкторе присвоить count
+    //        //     {  
 
 
-//    }
+    //        public static void IncreaseCount()
+    //        {
+    //            int count = 0;
+    //            count = count + 1;
+    //        }
+    //    }
+
+    public abstract class Shape
+    {
+        protected double Square;
+        public abstract double GetArea(); //virtual для переопределения 
+    }
+
+    public class Circle : Shape
+    {
+        private double radius = 3;
+        public override double GetArea() // override для переопределения
+        {
+            Square = Math.PI * radius * radius;
+            return Square;
+        }
+        public override string ToString()
+        {
+            return "Я Круг";
+        }
+    }
+
+    public class Triangle : Shape
+    {
+        private double angle = 90;
+        private double A;
+        private double B;
+        public Triangle(double a, double b)
+        {
+            A = a;
+            B = b;
+        }
+        public override double GetArea()
+        {
+            Square = A * B / 2;
+            return Square;
+        }
+        public override string ToString()
+        {
+            return "Я треугольник";
+        }
+
+    }
+    public class DerrivedTriangle : Triangle
+    {
+        public DerrivedTriangle(double a, double b) : base(a, b)
+        {
+        }
+        public override string ToString()
+        {
+            return " ";
+        }
+    }
+}
 //}
 
 
