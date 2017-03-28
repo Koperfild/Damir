@@ -10,107 +10,130 @@ namespace lessonHome1
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Напишите кол-во чисел");
-            //int a = int.Parse(Console.ReadLine());
-            //Number Get1 = new Number(a);
-
-            //Console.WriteLine("Чётные числа");
-            //ShowList(Get1.EvenNumbers);
-
-            //Console.WriteLine("Нечётные числа");
-            //ShowList(Get1.OddNumbers);
-            Object o = new object();
-            Console.WriteLine(o.ToString());
-
-            Circle c = new Circle();
-            Console.WriteLine(c.ToString());
-            Triangle t = new Triangle(2,3);
-            Console.WriteLine(t.ToString());
-
-            Console.WriteLine("\n\nА теперь из списка\n");
-            List<object> list = new List<object>();
-            list.Add(o);
-            list.Add(c);
-            list.Add(t);
-            for (int i = 0; i < list.Count; i++)
-                Console.WriteLine(list[i].ToString());
-
-        }
-
-        public static void ShowList(List<int> list)
-        {
-            for (int i = 0; i < list.Count; i++)
+        public class RightAngledTriangle // класс RightAngledTriangle - прямоугольный треугольник. 
+            //Сделай поля - все стороны и углы. И сделай конструкторы по 2 катетам, по одному 
+            //катету и прилегающему к нему углу, по гипотенузе. Т.е. все конструкторы 
+            //будут с параметрами double a, double b. Компилятор будет ругаться, но я потом 
+            //покажу как это надо изменить чтобы работало
             {
-                Console.WriteLine(list[i]);
+            public double a; // гипотенуза
+            public double b; //катет
+            public double c; //катет
+            public double Angle1;
+            public double Angle2;
+            public double Angle3;
+                public double FindA()
+                    {
+                        a=Math.Sqrt(b*b+c*c);
+                        return a;
+                    }
+                public double FindB()
+                    {
+                        b=Math.Sqrt(a*a-c*c);
+                        return a;
+                    }
+
+                public double FindC()
+                    {
+                        c=Math.Sqrt(a*a-b*b);
+                        return a;
+                    }
             }
-            Console.ReadKey();
-        }
-    }
-
-    public class Number : Energy
-    {
-        //делай пока классы, поля класса, методы со словом public в начале
-        //int num;
-        //Список int'ов объявляется так: List<int> list = new List<int>();
-        // int list <OddNumbers>;
-        // int list <EventNumbers>;
-        //В метод должен передаваться параметр int i.
-        //Т.е. метод будет выглядеть так: public void Addnumber(int i) 
-
-        public List<int> OddNumbers = new List<int>();
-        public List<int> EvenNumbers = new List<int>();
-        //Конструктор
-        public Number(int b)
-        {
-            FillList(b);
-        }
-        void FillList(int c)
-        {
-            for (int i = 1; i <= c; i++)
-            {
-                if (i % 2 == 0)
+        
+              RightAngledTriangle Leg1 = new RightAngledTriangle   // конструктор №1
+              {
+                double a=5.0;
+                double b=10.0;
+                double FindA ()
                 {
-                    OddNumbers.Add(i);
+                Console.WriteLine("Гипотенуза равна:" FindA());
                 }
-                else
+                double FindB ()
                 {
-                    EvenNumbers.Add(i);
+                    double a=9;
+                    double c=7;
+                    Console.WriteLine("Катет равен1:" FindB());
                 }
-
-            }
-        }
-
-        public void SetPowerCharge()
-        {
-
-        }
+                double FindС ()
+                {
+                    double a=6;
+                    double b=8;
+                    Console.WriteLine("Катет равен2:" FindС());
+                }
     }
+}
 
-
-    public interface Energy
-    {
-        void SetPowerCharge();
-
-    }
-    public interface IMyInterface
-    {
-        int Count { get; set; }
-        void Add(object a);
-    }
-
-    public class MyList : Object
-    {
-
-    }
+           
+                //В прямоугольном треугольнике есть 3 стороны и 3 угла. Из известных 
+                //2-х величин можно посчитать все остальные
+                //т.е. в конструторе считаются все остальные величины из данных двух
+                //если это 2 катета, то считается гипотенуза и углы
+                //в зависимости от того что известно
 
 
 
 
 
+//        {   // почему тут требует закрыть блок? я же внизу закрыл.
+//            //Ты сделал класс внутри метода класса Program. Сделай класс вне класса Program.
+//            // не понял, почему нельзя внутри Program. мы ведь раньше всегда здесь все писали.
+
+//            //Этот код уже идёт вне класса.
+//            //List<OddNumbers> list1 = new List<OddNumber>();
+//            //У тебя команды вне метода написаны
+//            Number Get1 = new Number();
+            
+//            //Вызывай теперь твой метод так
+//            Get1.AddNumber
+
+//            //хз чё ты хотел этим сказать) Чувствуется С++ восприятие мира
+//            int GetOddNum ()
+//            {
+//                for (num = 0; i < OddNumber.Count; i++)
+//                {
+//                    Console.WriteLine(OddNumber[i]);
+//                }
+//                Console.ReadKey();
+//            }
+//        }
+//    }
+//    public class Number
+//    {
+//        //делай пока классы, поля класса, методы со словом public в начале
+//        //int num;
+//        //Список int'ов объявляется так: List<int> list = new List<int>();
+//        // int list <OddNumbers>;
+//        // int list <EventNumbers>;
+//        //В метод должен передаваться параметр int i.
+//        //Т.е. метод будет выглядеть так: public void Addnumber(int i) 
+
+//        List<int> OddNumbers = new List<int>();
+//        List<int> EventNumbers = new List<int>();
+//        public void AddNumber()
+//        {
+//            for (int i = 0; i < 20; i++)
+//            {
+//                if (i % 2 == 0)
+//                {
+//                    OddNumbers.Add(i);
+//                }
+//                else
+//                {
+//                    EventNumbers.Add(i);
+//                }
+
+//            }
+//        }
+//    }
+//}
+            
+    
+    
+    
     //Triangle t1 = new Triangle(20,30);
-    //Triangle t2 = new Triangle(10,12);
+            //Triangle t2 = new Triangle(10,12);
 
-    //Circle circle = new Circle();
+            //Circle circle = new Circle();
     //        List<Triangle> list1 = new List<Triangle>();
     //        List<Circle> list2 = new List<Circle>();
     //        List<Shape> listOfShapes = new List<Shape>();
@@ -141,7 +164,7 @@ namespace lessonHome1
     //        }
     //        Console.ReadKey();
 
-
+            
     //    }
     //}
     //{
@@ -356,113 +379,95 @@ namespace lessonHome1
     //    Console.ReadKey();
 
 
-    //    public static class Matemath
-    //    {
-    //        static int count;
-    //        public static double Ymnog()
-    //        {
-    //            int tmp = 1;
-    //            for (int i = 1; i < 10; i++)
-    //            {
-    //                tmp = tmp * i;
-    //            }
-    //            return tmp;
-    //        }
+//    public static class Matemath
+//    {
+//        static int count;
+//        public static double Ymnog()
+//        {
+//            int tmp = 1;
+//            for (int i = 1; i < 10; i++)
+//            {
+//                tmp = tmp * i;
+//            }
+//            return tmp;
+//        }
 
-    //        public static double Summ()
-    //        {
-    //            int tmp = 1;
-    //            for (int i = 1; i < 10; i++)
-    //            {
-    //                tmp = tmp + i;
-    //            }
-    //            return tmp;
-    //        }
-
-
-
-    //        public static double Factory()
-    //        {
-    //            int tmp = 1;
-    //            for (int i = 1; i < 10; i++)
-    //            {
-    //                tmp = tmp * i;
-    //            }
-    //            return tmp;
-    //        }
-    //        // Console.WriteLine(Factory); //не видно Factory
-
-    //        //class Matemath = new Matemath();   
-    //        //     {    
-    //        //     Console.WriteLine(Matemath.Ymnog()); //почему не вижу методы после  Matemath. ?  
-    //        //     Console.WriteLine(Matemath.Summ());  
-    //        //     Console.WriteLine(Matemath.Factory());
-    //        //     Console.ReadKey();
-    //        //     }
-
-    //        //     class Matemath = new Matemath2();   // Задание в конструкторе присвоить count
-    //        //     {  
+//        public static double Summ()
+//        {
+//            int tmp = 1;
+//            for (int i = 1; i < 10; i++)
+//            {
+//                tmp = tmp + i;
+//            }
+//            return tmp;
+//        }
 
 
-    //        public static void IncreaseCount()
-    //        {
-    //            int count = 0;
-    //            count = count + 1;
-    //        }
-    //    }
 
-    public abstract class Shape
-    {
-        protected double Square;
-        public abstract double GetArea(); //virtual для переопределения 
-    }
+//        public static double Factory()
+//        {
+//            int tmp = 1;
+//            for (int i = 1; i < 10; i++)
+//            {
+//                tmp = tmp * i;
+//            }
+//            return tmp;
+//        }
+//        // Console.WriteLine(Factory); //не видно Factory
 
-    public class Circle : Shape
-    {
-        private double radius = 3;
-        public override double GetArea() // override для переопределения
-        {
-            Square = Math.PI * radius * radius;
-            return Square;
-        }
-        public override string ToString()
-        {
-            return "Я Круг";
-        }
-    }
+//        //class Matemath = new Matemath();   
+//        //     {    
+//        //     Console.WriteLine(Matemath.Ymnog()); //почему не вижу методы после  Matemath. ?  
+//        //     Console.WriteLine(Matemath.Summ());  
+//        //     Console.WriteLine(Matemath.Factory());
+//        //     Console.ReadKey();
+//        //     }
 
-    public class Triangle : Shape
-    {
-        private double angle = 90;
-        private double A;
-        private double B;
-        public Triangle(double a, double b)
-        {
-            A = a;
-            B = b;
-        }
-        public override double GetArea()
-        {
-            Square = A * B / 2;
-            return Square;
-        }
-        public override string ToString()
-        {
-            return "Я треугольник";
-        }
+//        //     class Matemath = new Matemath2();   // Задание в конструкторе присвоить count
+//        //     {  
 
-    }
-    public class DerrivedTriangle : Triangle
-    {
-        public DerrivedTriangle(double a, double b) : base(a, b)
-        {
-        }
-        public override string ToString()
-        {
-            return " ";
-        }
-    }
-}
+
+//        public static void IncreaseCount()
+//        {
+//            int count = 0;
+//            count = count + 1;
+//        }
+//    }
+
+//    public abstract class Shape
+//    {
+//        protected double Square;
+//        public abstract double GetArea(); //virtual для переопределения 
+//    }
+
+//    public class Circle : Shape
+//    {
+//        private double radius = 3;
+//        public override double GetArea() // override для переопределения
+//        {
+//            Square = Math.PI * radius * radius;
+//            return Square;
+//        }
+//    }
+
+//    public class Triangle : Shape
+//    {
+//        private double angle = 90;
+//        private double A;
+//        private double B;
+//        public Triangle(double a,double b)
+//        {
+//            A = a;
+//            B = b;
+//        }
+//        public override double GetArea()
+//        {
+//            Square = A * B / 2;
+//            return Square;
+//        }
+
+
+//    }
 //}
 
 
