@@ -16,28 +16,64 @@ namespace lessonHome1
             //будут с параметрами double a, double b. Компилятор будет ругаться, но я потом 
             //покажу как это надо изменить чтобы работало
             {
-            public double sideHypotenuse; 
-            public double sideLeg; //катет
+            public double a; // гипотенуза
+            public double b; //катет
+            public double c; //катет
             public double Angle1;
             public double Angle2;
             public double Angle3;
-            }
-        }
+                public double FindA()
+                    {
+                        a=Math.Sqrt(b*b+c*c);
+                        return a;
+                    }
+                public double FindB()
+                    {
+                        b=Math.Sqrt(a*a-c*c);
+                        return a;
+                    }
 
-            RightAngledTriangle Leg1 = new RightAngledTriangle
+                public double FindC()
+                    {
+                        c=Math.Sqrt(a*a-b*b);
+                        return a;
+                    }
+            }
+        
+              RightAngledTriangle Leg1 = new RightAngledTriangle   // конструктор №1
+              {
+                double a=5.0;
+                double b=10.0;
+                double FindA ()
                 {
-                  sideLeg=5.0;  
+                Console.WriteLine("Гипотенуза равна:" FindA());
                 }
-            RightAngledTriangle Leg2 = new RightAngledTriangle
+                double FindB ()
                 {
-                  Angle1=90.0;  
+                    double a=9;
+                    double c=7;
+                    Console.WriteLine("Катет равен1:" FindB());
                 }
-             RightAngledTriangle Leg3 = new RightAngledTriangle
+                double FindС ()
                 {
-                  sideHypotenuse=10.0;
+                    double a=6;
+                    double b=8;
+                    Console.WriteLine("Катет равен2:" FindС());
                 }
-     }
+    }
 }
+
+           
+                //В прямоугольном треугольнике есть 3 стороны и 3 угла. Из известных 
+                //2-х величин можно посчитать все остальные
+                //т.е. в конструторе считаются все остальные величины из данных двух
+                //если это 2 катета, то считается гипотенуза и углы
+                //в зависимости от того что известно
+
+
+
+
+
 //        {   // почему тут требует закрыть блок? я же внизу закрыл.
 //            //Ты сделал класс внутри метода класса Program. Сделай класс вне класса Program.
 //            // не понял, почему нельзя внутри Program. мы ведь раньше всегда здесь все писали.
