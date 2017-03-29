@@ -10,57 +10,47 @@ namespace lessonHome1
     {
         static void Main(string[] args)
         {
-        public class RightAngledTriangle // класс RightAngledTriangle - прямоугольный треугольник. 
-            //Сделай поля - все стороны и углы. И сделай конструкторы по 2 катетам, по одному 
-            //катету и прилегающему к нему углу, по гипотенузе. Т.е. все конструкторы 
-            //будут с параметрами double a, double b. Компилятор будет ругаться, но я потом 
-            //покажу как это надо изменить чтобы работало
-            {
-            public double a; // гипотенуза
-            public double b; //катет
-            public double c; //катет
-            public double Angle1;
-            public double Angle2;
-            public double Angle3;
-                public double FindA()
-                    {
-                        a=Math.Sqrt(b*b+c*c);
-                        return a;
-                    }
-                public double FindB()
-                    {
-                        b=Math.Sqrt(a*a-c*c);
-                        return a;
-                    }
 
-                public double FindC()
-                    {
-                        c=Math.Sqrt(a*a-b*b);
-                        return a;
-                    }
-            }
-        
-              RightAngledTriangle Leg1 = new RightAngledTriangle   // конструктор №1
-              {
-                double a=5.0;
-                double b=10.0;
-                double FindA ()
-                {
-                Console.WriteLine("Гипотенуза равна:" FindA());
-                }
-                double FindB ()
-                {
-                    double a=9;
-                    double c=7;
-                    Console.WriteLine("Катет равен1:" FindB());
-                }
-                double FindС ()
-                {
-                    double a=6;
-                    double b=8;
-                    Console.WriteLine("Катет равен2:" FindС());
-                }
+        }
     }
+    public class RightAngledTriangle // класс RightAngledTriangle - прямоугольный треугольник. 
+                                     //Сделай поля - все стороны и углы. И сделай конструкторы по 2 катетам, по одному 
+                                     //катету и прилегающему к нему углу, по гипотенузе. Т.е. все конструкторы 
+                                     //будут с параметрами double a, double b. Компилятор будет ругаться, но я потом 
+                                     //покажу как это надо изменить чтобы работало
+    {
+        public double gipotenuza; // гипотенуза
+        public double b; //катет
+        public double c; //катет
+        public double Angle1;
+        public double Angle2;
+        public double Angle3;
+
+        public RightAngledTriangle(double katetA, double katetB)
+        {
+            b = katetA;
+            c = katetB;
+            gipotenuza = FindGipotenuza(b, c);
+        }
+        
+
+        public double FindGipotenuza(double katetA, double katetB)
+        {
+            var gipotenuza = Math.Sqrt(katetA * katetA + katetB * katetB);
+            return gipotenuza;
+        }
+        public double FindKatet(double gipotenuza, double katet)
+        {
+            var result = Math.Sqrt(gipotenuza * gipotenuza - katet * katet);
+            return result;
+        }
+    }    
+    //public enum CalcType
+    //{
+    //    ByKatets,
+    //    ByKatetAndGipotenuza,
+    //    ByKatetAndAngle
+    //}
 }
 
            
