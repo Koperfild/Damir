@@ -10,7 +10,36 @@ namespace lessonHome1
     {
         static void Main(string[] args)
         {
+            RightAngledTriangle r = new RightAngledTriangle(5d, 6d);
+            
 
+            string str = "У статических функций-членов нет указателя this, так как они существуют только на уровне класса и не являются частями объектов. Использование ссылки на this в статическом методе является недопустимым.";
+            string[] words;
+            words = str.Split(new char[] { ',', ' ', ';' }, StringSplitOptions.RemoveEmptyEntries);
+            List<string> wordsStrings = words.ToList();
+
+            List<IList<string>> spisok = new List<IList<string>>();
+            spisok.Add(words);
+            spisok.Add(wordsStrings);
+
+            for (int i=0;i<spisok.Count;i++)
+            {
+                for (int j=0;j<spisok[i].Count;j++)
+                {
+                    Console.WriteLine(spisok.ElementAt(i).ElementAt(j));
+                }
+            }
+
+            //IList<string>
+            //IList<string> a;
+
+            //Array a;
+            List<string> l;
+            for (int i = 0; i < words.Count(); i++)
+                Console.WriteLine(words[i]);
+            string k = new String('c', 6);
+            Console.WriteLine(k);
+            Console.ReadKey();
         }
     }
     public class RightAngledTriangle // класс RightAngledTriangle - прямоугольный треугольник. 
@@ -19,38 +48,53 @@ namespace lessonHome1
                                      //будут с параметрами double a, double b. Компилятор будет ругаться, но я потом 
                                      //покажу как это надо изменить чтобы работало
     {
+        #region Свойства
         public double gipotenuza; // гипотенуза
         public double b; //катет
         public double c; //катет
         public double Angle1;
         public double Angle2;
         public double Angle3;
+        #endregion
 
-        public RightAngledTriangle(double katetA, double katetB)
+        public RightAngledTriangle(double b, double c)
         {
-            b = katetA;
-            c = katetB;
+            this.b = b;
+            this.c = c;
             gipotenuza = FindGipotenuza(b, c);
+
+            
+        }
+        public RightAngledTriangle(double a)
+        {
+
         }
         
 
-        public double FindGipotenuza(double katetA, double katetB)
+                   
+        
+        private double FindGipotenuza(double katetA, double katetB)
         {
             var gipotenuza = Math.Sqrt(katetA * katetA + katetB * katetB);
             return gipotenuza;
         }
-        public double FindKatet(double gipotenuza, double katet)
+        private int FindGipotenuza(double a,double b)
+        {
+            return 5;
+        }
+
+        private double FindKatet(double gipotenuza, double katet)
         {
             var result = Math.Sqrt(gipotenuza * gipotenuza - katet * katet);
             return result;
         }
-    }    
-    //public enum CalcType
-    //{
-    //    ByKatets,
-    //    ByKatetAndGipotenuza,
-    //    ByKatetAndAngle
-    //}
+    }
+    public enum CalcType
+    {
+        ByKatets,
+        ByKatetAndGipotenuza,
+        ByKatetAndAngle
+    }
 }
 
            
