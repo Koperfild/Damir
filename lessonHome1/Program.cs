@@ -8,50 +8,132 @@ namespace lessonHome1
 {
     class Program
     {
+        //создай класс Rectangle. У него сделай поля - сторона а и сторона б. 
+        //Сделай 2 конструктора. Один принимает 1 число и делает квадрат, 
+        //т.е. а и б равны этому числу. А второй конструктор уже принимает 
+        //2 значения - длину а и длину б.
+
         static void Main(string[] args)
         {
+            Rectangle Gipotinuse = new Rectangle (10.0, 5.0);
+            Console.WriteLine("1й катет равен " + Gipotinuse.SideA + " второй " + Gipotinuse.SideB + 
+                " сумма их квадратов равна:\n"+Gipotinuse.Sum()+"\n");
+            
+            Rectangle Gipotinuse2 = new Rectangle (12.0);
+            Console.WriteLine("если гипотенуза равна "+Gipotinuse2.SideC+" , то ее квадрат равен:\n"+Gipotinuse2.Sum2());
+            Console.ReadKey();
+        }
 
+        class Rectangle
+        {
+            public double SideA;
+            public double SideB;
+            public double SideC;
+            public Rectangle (double a, double b)
+            {                             
+                SideA=a;
+                SideB=b;  
+            }
+            public Rectangle (double c)
+            {
+                SideC=c;
+        
+            }
+                public double Sum2 ()
+                {
+                    return SideC *= SideC;
+                }      
+           
+            public double Sum ()
+            {               
+                return SideA*SideA+SideB*SideB;
+            }
         }
     }
-    public class RightAngledTriangle // класс RightAngledTriangle - прямоугольный треугольник. 
-                                     //Сделай поля - все стороны и углы. И сделай конструкторы по 2 катетам, по одному 
-                                     //катету и прилегающему к нему углу, по гипотенузе. Т.е. все конструкторы 
-                                     //будут с параметрами double a, double b. Компилятор будет ругаться, но я потом 
-                                     //покажу как это надо изменить чтобы работало
-    {
-        public double gipotenuza; // гипотенуза
-        public double b; //катет
-        public double c; //катет
-        public double Angle1;
-        public double Angle2;
-        public double Angle3;
-
-        public RightAngledTriangle(double katetA, double katetB)
-        {
-            b = katetA;
-            c = katetB;
-            gipotenuza = FindGipotenuza(b, c);
-        }
-        
-
-        public double FindGipotenuza(double katetA, double katetB)
-        {
-            var gipotenuza = Math.Sqrt(katetA * katetA + katetB * katetB);
-            return gipotenuza;
-        }
-        public double FindKatet(double gipotenuza, double katet)
-        {
-            var result = Math.Sqrt(gipotenuza * gipotenuza - katet * katet);
-            return result;
-        }
-    }    
-    //public enum CalcType
-    //{
-    //    ByKatets,
-    //    ByKatetAndGipotenuza,
-    //    ByKatetAndAngle
-    //}
 }
+            
+            
+            //public double Square (double c) // метод
+            //{
+            //   c*=c;
+            //}
+            //public Rectangle(double a, double b) //конструктор
+            //{
+            //    SideA = a;
+            //    SideB = b;
+                
+            //    public double Sum ()
+            //    {                
+//            //    return 
+//            //        Rectangle.* a + b * b;
+//            //    }
+//            }
+           
+
+//        }
+//    }
+//}
+////        
+            
+
+
+
+
+
+            
+            
+            //public class RightAngledTriangle // класс RightAngledTriangle - прямоугольный треугольник. 
+//            //Сделай поля - все стороны и углы. И сделай конструкторы по 2 катетам, по одному 
+//            //катету и прилегающему к нему углу, по гипотенузе. Т.е. все конструкторы 
+//            //будут с параметрами double a, double b. Компилятор будет ругаться, но я потом 
+//            //покажу как это надо изменить чтобы работало
+//            {
+//            public double a; // гипотенуза
+//            public double b; //катет
+//            public double c; //катет
+//            public double Angle1;
+//            public double Angle2;
+//            public double Angle3;
+//                public double FindA()
+//                    {
+//                        a=Math.Sqrt(b*b+c*c);
+//                        return a;
+//                    }
+//                public double FindB()
+//                    {
+//                        b=Math.Sqrt(a*a-c*c);
+//                        return a;
+//                    }
+
+//                public double FindC()
+//                    {
+//                        c=Math.Sqrt(a*a-b*b);
+//                        return a;
+//                    }
+//            }
+        
+//              RightAngledTriangle Leg1 = new RightAngledTriangle   // конструктор №1
+//              {
+//                double a=5.0;
+//                double b=10.0;
+//                double FindA ()
+//                {
+//                Console.WriteLine("Гипотенуза равна:" FindA());
+//                }
+//                double FindB ()
+//                {
+//                    double a=9;
+//                    double c=7;
+//                    Console.WriteLine("Катет равен1:" FindB());
+//                }
+//                double FindС ()
+//                {
+//                    double a=6;
+//                    double b=8;
+//                    Console.WriteLine("Катет равен2:" FindС());
+//                }
+//    }
+//}
 
            
                 //В прямоугольном треугольнике есть 3 стороны и 3 угла. Из известных 
